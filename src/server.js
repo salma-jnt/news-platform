@@ -13,8 +13,13 @@ app.use(express.static('public'));
 // Routes
 app.use('/api/news', newsRoutes);
 
-// TODO: Question 3 - Ajouter un middleware pour gérer les erreurs
+// Middleware de gestion des erreurs
+app.use((err, req, res, next) => {
+    console.error(err.stack);  // Afficher l'erreur dans la console
+    res.status(500).send({ message: 'Quelque chose a mal tourné, essayez encore.' });  // Retourner un message d'erreur générique
+});
 
+// Démarrer le serveur
 app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
+    console.log(`Server is running on port ${PORT}`);
 });

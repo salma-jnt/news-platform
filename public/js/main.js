@@ -1,4 +1,3 @@
-// Fonction pour récupérer et afficher les derniers articles
 async function fetchLatestNews() {
     try {
         const response = await fetch('/api/news');
@@ -10,15 +9,28 @@ async function fetchLatestNews() {
     }
 }
 
-// TODO: Question 1 - Compléter la fonction displayNews
 function displayNews(news) {
     const container = document.getElementById('news-container');
-    // Utilisez Bootstrap pour créer des cards pour chaque article
+    news.forEach(article => {
+        const card = document.createElement('div');
+        card.classList.add('col-md-4', 'mb-4');
+        card.innerHTML = `
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">${article.title}</h5>
+                    <p class="card-text">${article.body}</p>
+                </div>
+            </div>
+        `;
+        container.appendChild(card);
+    });
 }
-
-// TODO: Question 2 - Créer une fonction pour gérer les erreurs
 function showError(message) {
-    // Afficher un message d'erreur avec Bootstrap
+    const container = document.getElementById('news-container');
+    const errorMessage = document.createElement('p');
+    errorMessage.classList.add('text-danger');
+    errorMessage.textContent = message;
+    container.appendChild(errorMessage);
 }
 
 // Initialisation

@@ -1,0 +1,147 @@
+/* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+/* Navbar Styling */
+.navbar {
+    background-color: #556b2f; /* Dark Olive Green */
+    transition: background-color 0.3s ease;
+}
+
+.navbar:hover {
+    background-color: #3e5329; /* Olive Green foncé lors du survol */
+}
+
+/* Main Content */
+main {
+    padding: 20px;
+}
+
+/* Heading Styles */
+h1, h2 {
+    color: #333;
+    font-weight: 600;
+}
+
+/* Section Styling */
+section {
+    margin-top: 30px;
+}
+
+/* Article Container */
+#news-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px; /* Réduire l'écart entre les cartes (articles) */
+    justify-content: center;
+    background-color: #ffffff; /* Container blanc */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Article Card */
+.card {
+    width: 100%;
+    max-width: 300px; /* Réduire la largeur maximale de chaque carte */
+    margin: 0; /* Supprimer les marges externes inutiles */
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    background-color: #8a9a5b; /* Moss Green pour les cartes */
+    transform: scale(1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+
+/* Hover Effect for Article Card */
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Effet de zoom au survol */
+    background-color: #7b8f51; /* Moss Green plus foncé au survol */
+}
+
+/* Article Image */
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.card:hover img {
+    transform: scale(1.1); /* Zoom sur l'image au survol */
+}
+
+/* Card Body */
+.card-body {
+    padding: 20px;
+    background-color: #ffffff;
+    transition: background-color 0.3s ease;
+}
+
+.card:hover .card-body {
+    background-color: #f7f7f7; /* Changement de fond au survol */
+}
+
+/* Article Title */
+.card-title {
+    font-size: 1.5rem;
+    color: #556b2f; /* Dark Olive Green */
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.card:hover .card-title {
+    color: #3e5329; /* Olive Green foncé au survol */
+}
+
+/* Article Description */
+.card-text {
+    color: #555;
+    font-size: 1rem;
+}
+
+/* Button Styling */
+.btn-primary {
+    background-color: #28a745; /* Vert */
+    border-color: #28a745;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #218838; /* Vert foncé au survol */
+    border-color: #1e7e34;
+}
+
+/* Error Message */
+.error-message {
+    color: #dc3545;
+    background-color: #f8d7da;
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* Animations for the Articles */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.card {
+    animation: fadeIn 1s ease-out;
+}
